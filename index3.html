@@ -1,0 +1,106 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <title>question 2</title>
+    <style>
+        /* Add any specific styling here */
+    </style>
+</head>
+<body>
+    <h3>Import Products</h3>
+    <div class="corolla-div">
+        <div class="camry-card">
+            <p>Step 1: </p>
+            <div class="content1-camry">
+                <label for="myfile-camry"> Select File</label><br><br>
+                <input type="file" name="myfile-camry" id="myfile-camry"><br><br>
+                <p>Supported File Type(s) : .CSV, .JSON</p>
+            </div>
+        </div>
+        <div class="accord-card">
+            <p>Step 2: </p>
+            <div class="content2-accord">
+                <p>Specify Format</p><br>
+                <form action="">
+                    <div class="inside-content2-accord">
+                        <div class="label-inside-content2-accord">
+                            <label for="file_type-accord">File Type</label><br><br><br>
+                            <label for="char_encoding-accord">Character Encoding</label><br><br><br>
+                            <label for="delimiter-accord">File Type</label><br><br>
+                            <label for="has_header-accord">Has Header</label>
+                        </div>
+                        <div class="input-inside-content2-accord">
+                            <select name="file_type-accord" id="file_type-accord">
+                                <option value="">CSV</option>
+                                <option value="">JSON</option>
+                            </select><br><br>
+                            
+                            <select name="char_encoding-accord" id="char_encoding-accord">
+                                <option value="">UTF-8</option>
+                            </select><br><br>
+                            
+                            <select name="delimiter-accord" id="delimiter-accord">
+                                <option value="">comma</option>
+                            </select><br><br>
+                            
+                            <input type="checkbox" id="has_header-accord">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mustang-card">
+        <input type="checkbox" id="step3-mustang">
+        <label for="step3-mustang">Step 3:<span class="span1-mustang">Display Handling</span><br><br>
+            <span class="span2-mustang">Select the fields to be displayed</span>
+        </label>
+        <div style="display: flex;">
+            <p style="padding-left: 110px;">Available Fields</p>
+            <p style="padding-left: 105px;">Fields to be Displayed</p>
+        </div>
+        <section class="container-mustang">
+            <div>
+                <select id="leftValues-mustang" size="4" multiple>
+                    <option>Subcategory</option>
+                    <option>Title</option>
+                    <option>Price</option>
+                    <option>Popularity</option>
+                </select>
+            </div>
+            <div class="for_mid_buttons">
+                <div class="center_buttons-mustang">
+                <input type="button" id="btnRight-mustang" value="&gt;&gt;" />
+                <input type="button" id="btnLeft-mustang" value="&lt;&lt;" />
+            </div>
+            </div>
+            
+            <div>
+                <select id="rightValues-mustang" size="5" multiple></select>
+            </div>
+        </section>
+        <script>
+            $("#btnRight-mustang").click(function () {
+                var selectedItem = $("#leftValues-mustang option:selected");
+                $("#rightValues-mustang").append(selectedItem);
+            });
+
+            $("#btnLeft-mustang").click(function () {
+                var selectedItem = $("#rightValues-mustang option:selected");
+                $("#leftValues-mustang").append(selectedItem);
+            });
+        </script>
+    </div>
+    <div class="charger-bottom_buttons">
+        <button class="next_button-charger"> <b>Next</b></button>
+        <button class="cancel_button-charger"><b>Cancel</b></button>
+    </div>
+</body>
+</html>
